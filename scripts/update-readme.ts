@@ -26,7 +26,11 @@ async function update() {
 
   const { code, stdout, stderr } = await command.output();
 
-  const output = stripColor(new TextDecoder().decode(stdout));
+  const output = stripColor(new TextDecoder().decode(stdout)).replace(
+    /\(New.*/,
+    "",
+  );
+
   const err = new TextDecoder().decode(stderr);
 
   if (code !== 0) {

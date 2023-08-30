@@ -19,7 +19,7 @@ alias mx-widget-tooling-reload="deno run --reload -A https://raw.githubuserconte
 ```
 
 Usage:   mx-widget-tooling                                                                                       
-Version: 0.1.1  (New version available: 0.1.0. Run 'mx-widget-tooling upgrade' to upgrade to the latest version!)
+Version: 0.1.1  
 
 Description:
 
