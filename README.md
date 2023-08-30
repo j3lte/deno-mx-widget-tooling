@@ -9,6 +9,7 @@ I use an alias for this in my `.bashrc`:
 
 ```bash
 alias mx-widget-tooling="deno run -A https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/master/cli.ts"
+alias mx-widget-tooling-reload="deno run --reload -A https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/master/cli.ts"
 ```
 
 ## Usage
