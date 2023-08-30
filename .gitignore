@@ -2,3 +2,7 @@
 misc/
 log/
 widgetfolder/
+x86_64-unknown-linux-gnu-dim
+aarch64-apple-darwin-dim
+x86_64-apple-darwin-dim
+x86_64-pc-windows-msvc-dim.exe
