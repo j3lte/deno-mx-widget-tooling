@@ -19,7 +19,7 @@ alias mx-widget-tooling-reload="deno run --reload -A https://raw.githubuserconte
 ```bash
 
 Usage:   mx-widget-tooling
-Version: 0.1.0
+Version: 0.1.0            
 
 Description:
 
@@ -27,15 +27,16 @@ Description:
 
 Options:
 
-  -h, --help     - Show this help.
-  -V, --version  - Show the version number for this program.
+  -h, --help     - Show this help.                            
+  -V, --version  - Show the version number for this program.  
 
 Commands:
 
-  check               - Check the current folder if it is a proper setup
-  version  [version]  - Set the version of the widget
-  setup               - Setup the current folder as a widget, include some goodies left behind by R&D
-  sizes               - Show the sizes of the widget mpks
+  check                   - Check the current folder if it is a proper setup                             
+  version  [version]      - Set the version of the widget                                                
+  setup                   - Setup the current folder as a widget, include some goodies left behind by R&D
+  sizes                   - Show the sizes of the widget mpks                                            
+  icons    [file] [dark]  - Generate the icons for the widget                                            
 
 ```
 <!-- END SNIPPET -->

@@ -15,6 +15,7 @@ async function update() {
   const command = new Deno.Command(Deno.execPath(), {
     args: [
       "run",
+      "-A",
       cliPath,
       "--help",
     ],

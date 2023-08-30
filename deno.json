@@ -2,7 +2,7 @@
   "tasks": {
     "update:deps": "deno run -A https://deno.land/x/udd/main.ts deps.ts dev_deps.ts",
     "update:version": "deno run --allow-read --allow-write ./scripts/update-version.ts",
-    "update:readme": "deno run --allow-read --allow-write --allow-run ./scripts/update-readme.ts",
+    "update:readme": "deno run --allow-read --allow-write --allow-run --allow-net ./scripts/update-readme.ts",
     "check:license": "deno run -A ./scripts/check-license.ts --check",
     "check:types": "deno check cli.ts",
     "check": "deno task check:license && deno task check:types",

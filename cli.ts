@@ -2,7 +2,7 @@
 
 import { Command } from "./deps.ts";
 
-import { check, setup, sizes, version } from "./src/mod.ts";
+import { check, icons, setup, sizes, version } from "./src/mod.ts";
 
 export const VERSION = "0.1.0";
 
@@ -39,6 +39,19 @@ if (import.meta.main) {
     .action(
       async (_opts) => {
         await sizes();
+      },
+    )
+    .command(
+      "icons [file:string] [dark:string]",
+      "Generate the icons for the widget",
+    )
+    .option("-f, --force", "Force the icons to be generated")
+    .action(
+      async ({ force }, file, dark) => {
+        await icons({
+          fileUrl: file,
+          darkUrl: dark,
+        }, force);
       },
     )
     .parse();
