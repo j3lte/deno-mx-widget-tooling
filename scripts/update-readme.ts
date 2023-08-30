@@ -37,7 +37,7 @@ async function update() {
   let updatedReadme = updateText(
     "SNIPPET",
     readme,
-    `\`\`\`bash\n${output}\`\`\``,
+    `\`\`\`\n${output}\`\`\``,
   );
   updatedReadme = updateText(
     "LICENSE",
