@@ -1,6 +1,11 @@
 // Copyright 2023 J.W. Lagendijk. All rights reserved. MIT license.
 
-import { Command } from "./deps.ts";
+import {
+  Command,
+  GithubProvider,
+  HelpCommand,
+  UpgradeCommand,
+} from "./deps.ts";
 
 import { check, icons, setup, sizes, version } from "./src/mod.ts";
 
@@ -54,5 +59,20 @@ if (import.meta.main) {
         }, force);
       },
     )
+    .command(
+      "upgrade",
+      new UpgradeCommand({
+        main: "cli.ts",
+        args: [
+          "-A",
+        ],
+        provider: [
+          new GithubProvider({
+            repository: "j3lte/deno-mx-widget-tooling",
+          }),
+        ],
+      }),
+    )
+    .command("help", new HelpCommand().global())
     .parse();
 }

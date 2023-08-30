@@ -1,6 +1,14 @@
 // Copyright 2023 J.W. Lagendijk. All rights reserved. MIT license.
 
-export { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts";
+export {
+  Command,
+  HelpCommand,
+} from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts";
+
+export {
+  GithubProvider,
+  UpgradeCommand,
+} from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/upgrade/mod.ts";
 
 export {
   ensureDir,
