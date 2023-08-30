@@ -1,4 +1,4 @@
-name: Update version (On Demand)
+name: Release new version (On Demand)
 on:
   workflow_dispatch:
     inputs:
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   release:
-    name: Update version (On Demand)
+    name: Release new version (On Demand)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,10 +37,26 @@ jobs:
           commit_options: '--no-verify'
           tagging_message: ${{ github.event.inputs.version }}
 
-      - name: "Run if changes have been detected"
+      - name: Run cross-compile
         if: steps.auto-commit-action.outputs.changes_detected == 'true'
-        run: echo "Changes detected"
+        run:
+          ./cross_compile.sh
 
-      - name: "Run if no changes have been detected"
-        if: steps.auto-commit-action.outputs.changes_detected == 'false'
-        run: echo "No Changes detected"
+      - name: Release Notes
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        run:
+          git log $(git describe HEAD~ --tags --abbrev=0)..HEAD --pretty='format:* %h %s%n  * %an <%ae>' --no-merges > ".github/RELEASE-TEMPLATE.md"
+
+      - name: Release with Notes
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: ".github/RELEASE-TEMPLATE.md"
+          files: |
+            x86_64-unknown-linux-gnu-dim
+            aarch64-apple-darwin-dim
+            x86_64-apple-darwin-dim
+            x86_64-pc-windows-msvc-dim.exe
+          tag_name: ${{ github.event.inputs.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
