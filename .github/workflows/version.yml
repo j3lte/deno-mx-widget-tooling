@@ -34,7 +34,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update Version (On Demand)
-          commit_options: '--no-verify --force'
+          commit_options: '--no-verify'
           tagging_message: ${{ github.event.inputs.version }}
 
       - name: "Run if changes have been detected"
