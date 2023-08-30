@@ -18,8 +18,8 @@ alias mx-widget-tooling-reload="deno run --reload -A https://raw.githubuserconte
 
 ```
 
-Usage:   mx-widget-tooling
-Version: 0.1.0            
+Usage:   mx-widget-tooling                                                                                       
+Version: 0.1.1  (New version available: 0.1.0. Run 'mx-widget-tooling upgrade' to upgrade to the latest version!)
 
 Description:
 
@@ -37,6 +37,8 @@ Commands:
   setup                   - Setup the current folder as a widget, include some goodies left behind by R&D
   sizes                   - Show the sizes of the widget mpks                                            
   icons    [file] [dark]  - Generate the icons for the widget                                            
+  upgrade                 - Upgrade mx-widget-tooling executable to latest or given version.             
+  help     [command]      - Show this help or the help of a sub-command.                                 
 
 ```
 <!-- END SNIPPET -->
