@@ -22,8 +22,8 @@ const version = async (newVersion?: string, force = false) => {
   } = checked as CheckResultOK;
 
   if (typeof newVersion === "undefined") {
-    console.log(`Current version in package.json =  ${version}`);
-    console.log(`Current version in package.xml =  ${packageVersion}`);
+    console.log(`Current version in package.json =\t${version}`);
+    console.log(`Current version in package.xml =\t${packageVersion}`);
     return;
   }
 
