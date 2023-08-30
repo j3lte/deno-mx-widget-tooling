@@ -6,6 +6,7 @@ export interface CheckResult {
   rootFolder: string;
   pkg: false | string;
   packageXML: false | string;
+  packageVersion: false | string;
   widgetXML: false | string;
   widgetName: false | string;
   srcFolder: false | string;
@@ -17,6 +18,7 @@ export interface CheckResult {
 export interface CheckResultOK {
   rootFolder: string;
   pkg: string;
+  packageVersion: string;
   packageXML: string;
   widgetXML: string;
   widgetName: string;
@@ -66,13 +68,14 @@ const check = async (): Promise<CheckResult | CheckResultOK> => {
 
     if (match) {
       const version = match[1];
+      result.packageVersion = version;
       if (result.version && result.version !== version) {
         console.log(
           `Version mismatch: package.json version is ${result.version}, package.xml version is ${version}`,
         );
-        result.version = false;
       }
     } else {
+      result.packageVersion = false;
       console.log("no version found in package.xml");
     }
   }

@@ -4,14 +4,7 @@ import { cmp, tryParse } from "../../deps.ts";
 import check from "./check.ts";
 import type { CheckResultOK } from "./check.ts";
 
-const version = async (newVersion: string, force = false) => {
-  const parsed = tryParse(newVersion);
-
-  if (!parsed) {
-    console.log(`Version ${newVersion} is not a valid semver version`);
-    return;
-  }
-
+const version = async (newVersion?: string, force = false) => {
   const checked = await check();
 
   if (!checked.valid) {
@@ -23,9 +16,23 @@ const version = async (newVersion: string, force = false) => {
   const {
     pkg,
     version,
+    packageVersion,
     packageXML,
     widgetXML,
   } = checked as CheckResultOK;
+
+  if (typeof newVersion === "undefined") {
+    console.log(`Current version in package.json =  ${version}`);
+    console.log(`Current version in package.xml =  ${packageVersion}`);
+    return;
+  }
+
+  const parsed = tryParse(newVersion);
+
+  if (!parsed) {
+    console.log(`Version ${newVersion} is not a valid semver version`);
+    return;
+  }
 
   const resVersion = tryParse(version);
   if (!resVersion) {

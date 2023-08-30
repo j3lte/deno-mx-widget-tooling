@@ -20,13 +20,10 @@ if (import.meta.main) {
       },
     )
     .command("version [version:string]", "Set the version of the widget")
+    .option("-f, --force", "Force the version to be set")
     .action(
-      async (_opts, ver) => {
-        if (!ver) {
-          console.log("No version specified");
-          return;
-        }
-        await version(ver, true);
+      async ({ force }, ver) => {
+        await version(ver, force);
       },
     )
     .command(
