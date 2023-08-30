@@ -8,8 +8,8 @@ Some tools I use for Mendix widget building. Conveniently wrapped in a Deno scri
 I use an alias for this in my `.bashrc`:
 
 ```bash
-alias mx-widget-tooling="deno run -A https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/master/cli.ts"
-alias mx-widget-tooling-reload="deno run --reload -A https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/master/cli.ts"
+alias mx-widget-tooling="deno run -A https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/main/cli.ts"
+alias mx-widget-tooling-reload="deno run --reload -A https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/main/cli.ts"
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ alias mx-widget-tooling-reload="deno run --reload -A https://raw.githubuserconte
 ```bash
 
 Usage:   mx-widget-tooling
-Version: 0.1.0            
+Version: 0.1.0
 
 Description:
 
@@ -27,16 +27,16 @@ Description:
 
 Options:
 
-  -h, --help     - Show this help.                            
-  -V, --version  - Show the version number for this program.  
+  -h, --help     - Show this help.
+  -V, --version  - Show the version number for this program.
 
 Commands:
 
-  check                   - Check the current folder if it is a proper setup                             
-  version  [version]      - Set the version of the widget                                                
+  check                   - Check the current folder if it is a proper setup
+  version  [version]      - Set the version of the widget
   setup                   - Setup the current folder as a widget, include some goodies left behind by R&D
-  sizes                   - Show the sizes of the widget mpks                                            
-  icons    [file] [dark]  - Generate the icons for the widget                                            
+  sizes                   - Show the sizes of the widget mpks
+  icons    [file] [dark]  - Generate the icons for the widget
 
 ```
 <!-- END SNIPPET -->
