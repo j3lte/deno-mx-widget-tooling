@@ -3,14 +3,28 @@ MX Widget Tooling
 
 Some tools I use for Mendix widget building. Conveniently wrapped in a Deno script that can be directly run from Github.
 
-> This is intended for the power-users and should be used with caution. I do not take any responsibility for damaging you widget, computer or causing a global meltdown.
+>
+> *This is intended for power-users and should be used with caution. I do not take any responsibility for damaging you widget, computer or causing a global meltdown.*
+>
 
-I use an alias for this in my `.bashrc`:
+## Installation
+
+### Using Deno
+
+If you have [Deno](https://deno.land/) installed, you can run the following command:
+<!-- START INSTALL -->
 
 ```bash
-alias mx-widget-tooling="deno run -A https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/main/cli.ts"
-alias mx-widget-tooling-reload="deno run --reload -A https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/main/cli.ts"
+deno install -A -n mx-widget-tooling https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/0.2.1/cli.ts
 ```
+
+<!-- END INSTALL -->
+### Executable
+
+> Note: This is not recommended, as updating does not work automatically.
+
+You can download the latest executable from the [releases page](https://github.com/j3lte/deno-mx-widget-tooling/releases). Download the binary for your platform and place it somewhere in your path. Make sure it is executable (`chmod +x mx-widget-tooling`). You can now run `mx-widget-tooling` from anywhere.
+
 
 ## Usage
 
@@ -18,8 +32,8 @@ alias mx-widget-tooling-reload="deno run --reload -A https://raw.githubuserconte
 
 ```
 
-Usage:   mx-widget-tooling                                                                                       
-Version: 0.2.1  
+Usage:   mx-widget-tooling
+Version: 0.2.1
 
 Description:
 
@@ -27,22 +41,25 @@ Description:
 
 Options:
 
-  -h, --help     - Show this help.                            
-  -V, --version  - Show the version number for this program.  
+  -h, --help     - Show this help.
+  -V, --version  - Show the version number for this program.
 
 Commands:
 
-  check                   - Check the current folder if it is a proper setup                             
-  version  [version]      - Set the version of the widget                                                
+  check                   - Check the current folder if it is a proper setup
+  version  [version]      - Set the version of the widget
   setup                   - Setup the current folder as a widget, include some goodies left behind by R&D
-  sizes                   - Show the sizes of the widget mpks                                            
-  icons    [file] [dark]  - Generate the icons for the widget                                            
-  upgrade                 - Upgrade mx-widget-tooling executable to latest or given version.             
-  help     [command]      - Show this help or the help of a sub-command.                                 
+  sizes                   - Show the sizes of the widget mpks
+  icons    [file] [dark]  - Generate the icons for the widget
+  upgrade                 - Upgrade mx-widget-tooling executable to latest or given version.
+  help     [command]      - Show this help or the help of a sub-command.
 
 ```
 <!-- END SNIPPET -->
 
+### Upgrade
+
+If you install using Deno (see above), you can upgrade using `mx-widget-tooling upgrade`. This will download the latest version from Github and replace the current version.
 ## License
 
 MX Widget Tooling is licensed under the [MIT license](LICENSE).

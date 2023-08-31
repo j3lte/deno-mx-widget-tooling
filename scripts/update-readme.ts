@@ -48,9 +48,11 @@ async function update() {
     updatedReadme,
     `\`\`\`\n${license}\n\`\`\``,
   );
-  updatedReadme = updatedReadme.replace(
-    /deno\.land\/x\/spidertrap(.*)\//g,
-    `deno.land/x/spidertrap@${VERSION}/`,
+  updatedReadme = updateText(
+    "INSTALL",
+    updatedReadme,
+    "```bash\ndeno install -A -n mx-widget-tooling https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/" +
+      VERSION + "/cli.ts\n```\n",
   );
 
   await Deno.writeTextFile(readmePath, updatedReadme);
