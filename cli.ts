@@ -22,13 +22,15 @@ if (import.meta.main) {
         const res = await check();
         console.log("\nCheck result:\n");
         console.log(res);
+        Deno.exit(res.valid ? 0 : 1);
       },
     )
     .command("version [version:string]", "Set the version of the widget")
     .option("-f, --force", "Force the version to be set")
     .action(
       async ({ force }, ver) => {
-        await version(ver, force);
+        const ok = await version(ver, force);
+        Deno.exit(ok ? 0 : 1);
       },
     )
     .command(
@@ -37,13 +39,15 @@ if (import.meta.main) {
     )
     .action(
       async (_opts) => {
-        await setup();
+        const ok = await setup();
+        Deno.exit(ok ? 0 : 1);
       },
     )
     .command("sizes", "Show the sizes of the widget mpks")
     .action(
       async (_opts) => {
         await sizes();
+        Deno.exit(0);
       },
     )
     .command(
@@ -55,12 +59,13 @@ if (import.meta.main) {
     .option("-t, --tile-padding <number>", "Padding for the tile")
     .action(
       async ({ force, iconPadding, tilePadding }, file, dark) => {
-        await icons({
+        const ok = await icons({
           fileUrl: file,
           darkUrl: dark,
           iconPadding: iconPadding ? parseInt(iconPadding) : undefined,
           tilePadding: tilePadding ? parseInt(tilePadding) : undefined,
         }, force);
+        Deno.exit(ok ? 0 : 1);
       },
     )
     .command(

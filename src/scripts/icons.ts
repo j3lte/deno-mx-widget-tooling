@@ -27,7 +27,7 @@ const readImage = async (fileUri: string): Promise<Image> => {
 const icons = async (
   { fileUrl, darkUrl, iconPadding, tilePadding }: IconsOptions,
   force = false,
-) => {
+): Promise<boolean> => {
   const { valid, widgetName, srcFolder } = await check();
 
   const pad = {
@@ -44,7 +44,7 @@ const icons = async (
   if (!valid || !srcFolder || !widgetName) {
     console.log("Not a valid widget folder");
     console.log(valid);
-    return;
+    return false;
   }
 
   const iconUrl = join(srcFolder, `./${widgetName}.icon.png`);
@@ -61,7 +61,7 @@ const icons = async (
 
   if (anyExists.includes(true) && !force) {
     console.log("Icons already exist");
-    return;
+    return false;
   }
 
   const iconImage = new Image(iconSize, iconSize);
@@ -76,7 +76,7 @@ const icons = async (
     });
     if (!fileExists) {
       console.log("File does not exist");
-      return;
+      return false;
     }
 
     if (darkUrl) {
@@ -86,7 +86,7 @@ const icons = async (
       });
       if (!darkExists) {
         console.log("Dark file does not exist");
-        return;
+        return false;
       }
     }
 
@@ -117,6 +117,7 @@ const icons = async (
       tileDarkImage.composite(largeImageDark, pad.tile / 2, pad.tile / 2);
     } catch (error) {
       console.error("Error generating icons", error);
+      return false;
     }
   }
 
@@ -126,6 +127,9 @@ const icons = async (
     Deno.writeFile(tileUrl, await tileImage.encode(3)),
     Deno.writeFile(tileDarkUrl, await tileDarkImage.encode(3)),
   ]);
+
+  console.log("Icons generated");
+  return true;
 };
 
 export default icons;

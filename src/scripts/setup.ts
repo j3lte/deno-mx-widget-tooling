@@ -112,17 +112,18 @@ const rollupConfig = async (root: string) => {
   }
 };
 
-const setup = async () => {
+const setup = async (): Promise<boolean> => {
   const { rootFolder, valid } = await check();
   if (!valid) {
     console.log("Not a valid widget folder");
-    return;
+    return false;
   }
   console.log(`Setting up in ${rootFolder}`);
 
   await envFile(rootFolder);
   await vsCodeSettings(rootFolder);
   await rollupConfig(rootFolder);
+  return true;
 };
 
 export default setup;

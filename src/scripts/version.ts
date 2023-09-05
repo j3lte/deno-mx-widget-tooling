@@ -1,16 +1,20 @@
 // Copyright 2023 J.W. Lagendijk. All rights reserved. MIT license.
 
+import { re } from "https://deno.land/std@0.201.0/semver/_shared.ts";
 import { cmp, tryParse } from "../../deps.ts";
 import check from "./check.ts";
 import type { CheckResultOK } from "./check.ts";
 
-const version = async (newVersion?: string, force = false) => {
+const version = async (
+  newVersion?: string,
+  force = false,
+): Promise<boolean> => {
   const checked = await check();
 
   if (!checked.valid) {
     console.log("Not a valid widget folder");
     console.log(checked);
-    return;
+    return false;
   }
 
   const {
@@ -24,27 +28,27 @@ const version = async (newVersion?: string, force = false) => {
   if (typeof newVersion === "undefined") {
     console.log(`Current version in package.json =\t${version}`);
     console.log(`Current version in package.xml =\t${packageVersion}`);
-    return;
+    return false;
   }
 
   const parsed = tryParse(newVersion);
 
   if (!parsed) {
     console.log(`Version ${newVersion} is not a valid semver version`);
-    return;
+    return false;
   }
 
   const resVersion = tryParse(version);
   if (!resVersion) {
     console.log("Version in package.json is not a valid semver version");
-    return;
+    return false;
   }
 
   if (cmp(parsed, "<=", resVersion) && !force) {
     console.log(
       `New version ${newVersion} is not higher than ${version}`,
     );
-    return;
+    return false;
   }
 
   const pkgFile = JSON.parse(await Deno.readTextFile(pkg));
@@ -67,6 +71,7 @@ const version = async (newVersion?: string, force = false) => {
   await Deno.writeTextFile(widgetXML, newWidgetXML);
 
   console.log(`Version set to ${newVersion}`);
+  return true;
 };
 
 export default version;
