@@ -6,8 +6,6 @@ import check from "./check.ts";
 
 const iconSize = 64;
 const tileSize = [256, 192];
-const iconPadding = 16;
-const tilePadding = 48;
 
 interface IconsOptions {
   fileUrl?: string;
@@ -33,16 +31,14 @@ const icons = async (
   const { valid, widgetName, srcFolder } = await check();
 
   const pad = {
-    icon:
-      typeof iconPadding === "number" && !Number.isNaN(iconPadding) &&
+    icon: typeof iconPadding === "number" && !Number.isNaN(iconPadding) &&
         iconPadding >= 0
-        ? iconPadding
-        : 16,
-    tile:
-      typeof tilePadding === "number" && !Number.isNaN(tilePadding) &&
+      ? iconPadding
+      : 16,
+    tile: typeof tilePadding === "number" && !Number.isNaN(tilePadding) &&
         tilePadding >= 0
-        ? tilePadding
-        : 48,
+      ? tilePadding
+      : 48,
   };
 
   if (!valid || !srcFolder || !widgetName) {
