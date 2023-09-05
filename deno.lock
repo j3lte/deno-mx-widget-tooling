@@ -260,7 +260,7 @@
     "https://deno.land/x/imagescript@1.2.15/v2/ops/rotate.mjs": "a1b65616717bd2eed8db406affea3263b4674dada46b56441ef38167a187455d",
     "https://deno.land/x/imagescript@1.2.15/v2/util/mem.mjs": "4968d400dae069b4bf0ef4767c1802fd2cc7d15d90eda4cfadf5b4cd19b96c6d",
     "https://deno.land/x/jszip@0.11.0/mod.ts": "5661ddc18e9ac9c07e3c5d2483bc912a7022b6af0d784bb7b05035973e640ba1",
-    "https://esm.sh/jszip@3.7.1": "b65e9ecdd15944ca2824e3469a0576fcf58fd23237f8f4459f7b6172e069725e",
-    "https://esm.sh/v131/jszip@3.7.1/denonext/jszip.mjs": "d31d7f9e0de9c6db3c07ca93f7301b756273d4dccb41b600461978fc313504c9"
+    "https://esm.sh/jszip@3.7.1": "c7fd4718ddac34d051e5f40e5827f2e65e14355db6b8e2c4a3f894f3cd4e70a5",
+    "https://esm.sh/v132/jszip@3.7.1/denonext/jszip.mjs": "d31d7f9e0de9c6db3c07ca93f7301b756273d4dccb41b600461978fc313504c9"
   }
 }
