@@ -6,7 +6,8 @@
     "check:license": "deno run -A ./scripts/check-license.ts --check",
     "check:types": "deno check cli.ts",
     "check": "deno task check:license && deno task check:types",
-    "ok": "deno fmt --check --ignore=README.md && deno lint && deno task check"
+    "ok": "deno fmt --check --ignore=README.md && deno lint && deno task check",
+    "cache": "deno cache --lock=deno.lock --lock-write ./deps.ts"
   },
   "exclude": [
     "cov/"

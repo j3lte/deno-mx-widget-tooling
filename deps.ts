@@ -14,11 +14,11 @@ export {
   ensureDir,
   exists,
   walk,
-} from "https://deno.land/std@0.200.0/fs/mod.ts";
-export { join } from "https://deno.land/std@0.200.0/path/mod.ts";
-export { cmp } from "https://deno.land/std@0.200.0/semver/mod.ts";
+} from "https://deno.land/std@0.201.0/fs/mod.ts";
+export { join } from "https://deno.land/std@0.201.0/path/mod.ts";
+export { cmp } from "https://deno.land/std@0.201.0/semver/mod.ts";
 
-export { tryParse } from "https://deno.land/std@0.200.0/semver/try_parse.ts";
+export { tryParse } from "https://deno.land/std@0.201.0/semver/try_parse.ts";
 
 export { default as convert } from "https://deno.land/x/convert_pro@1.3.0/mod.ts";
 
