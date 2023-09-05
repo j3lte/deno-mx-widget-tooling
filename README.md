@@ -33,7 +33,7 @@ You can download the latest executable from the [releases page](https://github.c
 ```
 
 Usage:   mx-widget-tooling
-Version: 0.2.1
+Version: 0.2.1            
 
 Description:
 
@@ -41,18 +41,18 @@ Description:
 
 Options:
 
-  -h, --help     - Show this help.
-  -V, --version  - Show the version number for this program.
+  -h, --help     - Show this help.                            
+  -V, --version  - Show the version number for this program.  
 
 Commands:
 
-  check                   - Check the current folder if it is a proper setup
-  version  [version]      - Set the version of the widget
+  check                   - Check the current folder if it is a proper setup                             
+  version  [version]      - Set the version of the widget                                                
   setup                   - Setup the current folder as a widget, include some goodies left behind by R&D
-  sizes                   - Show the sizes of the widget mpks
-  icons    [file] [dark]  - Generate the icons for the widget
-  upgrade                 - Upgrade mx-widget-tooling executable to latest or given version.
-  help     [command]      - Show this help or the help of a sub-command.
+  sizes                   - Show the sizes of the widget mpks                                            
+  icons    [file] [dark]  - Generate the icons for the widget                                            
+  upgrade                 - Upgrade mx-widget-tooling executable to latest or given version.             
+  help     [command]      - Show this help or the help of a sub-command.                                 
 
 ```
 <!-- END SNIPPET -->

@@ -23,6 +23,9 @@ jobs:
         with:
           deno-version: v1.36.4
 
+      - name: Remove lockfile
+        run: rm -f deno.lock
+
       - name: Run Update Version
         run: deno task update:version ${{ github.event.inputs.version }}
 

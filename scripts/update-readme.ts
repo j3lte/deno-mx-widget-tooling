@@ -1,6 +1,6 @@
 // Copyright 2023 J.W. Lagendijk. All rights reserved. MIT license.
 
-import { stripColor } from "../dev_deps.ts";
+import { stripAnsiCode } from "../dev_deps.ts";
 
 import { updateText } from "./utils.ts";
 import { VERSION } from "../cli.ts";
@@ -26,7 +26,7 @@ async function update() {
 
   const { code, stdout, stderr } = await command.output();
 
-  const output = stripColor(new TextDecoder().decode(stdout)).replace(
+  const output = stripAnsiCode(new TextDecoder().decode(stdout)).replace(
     /\(New.*/,
     "",
   );
