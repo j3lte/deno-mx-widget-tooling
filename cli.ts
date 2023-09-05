@@ -51,11 +51,15 @@ if (import.meta.main) {
       "Generate the icons for the widget",
     )
     .option("-f, --force", "Force the icons to be generated")
+    .option("-i, --icon-padding <number>", "Padding for the icon")
+    .option("-t, --tile-padding <number>", "Padding for the tile")
     .action(
-      async ({ force }, file, dark) => {
+      async ({ force, iconPadding, tilePadding }, file, dark) => {
         await icons({
           fileUrl: file,
           darkUrl: dark,
+          iconPadding: iconPadding ? parseInt(iconPadding) : undefined,
+          tilePadding: tilePadding ? parseInt(tilePadding) : undefined,
         }, force);
       },
     )
