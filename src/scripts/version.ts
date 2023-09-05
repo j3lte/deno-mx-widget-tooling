@@ -1,6 +1,5 @@
 // Copyright 2023 J.W. Lagendijk. All rights reserved. MIT license.
 
-import { re } from "https://deno.land/std@0.201.0/semver/_shared.ts";
 import { cmp, tryParse } from "../../deps.ts";
 import check from "./check.ts";
 import type { CheckResultOK } from "./check.ts";
