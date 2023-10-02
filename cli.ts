@@ -7,7 +7,15 @@ import {
   UpgradeCommand,
 } from "./deps.ts";
 
-import { check, copyRelease, icons, setup, sizes, version } from "./src/mod.ts";
+import {
+  check,
+  copyRelease,
+  icons,
+  renamePackage,
+  setup,
+  sizes,
+  version,
+} from "./src/mod.ts";
 
 export const VERSION = "0.4.0";
 
@@ -57,6 +65,16 @@ if (import.meta.main) {
     .action(
       async (_opts, target, version) => {
         const ok = await copyRelease(target, version);
+        Deno.exit(ok ? 0 : 1);
+      },
+    )
+    .command(
+      "rename-package [newName:string]",
+      "Rename the package name of the widget",
+    )
+    .action(
+      async (_opts, newName) => {
+        const ok = await renamePackage(newName);
         Deno.exit(ok ? 0 : 1);
       },
     )

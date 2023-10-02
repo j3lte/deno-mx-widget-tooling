@@ -5,6 +5,7 @@ import { exists, join } from "../../deps.ts";
 export interface CheckResult {
   rootFolder: string;
   pkg: false | string;
+  name: false | string;
   packageXML: false | string;
   packageVersion: false | string;
   widgetXML: false | string;
@@ -18,6 +19,7 @@ export interface CheckResult {
 export interface CheckResultOK {
   rootFolder: string;
   pkg: string;
+  name: false | string;
   packageVersion: string;
   packageXML: string;
   widgetXML: string;
@@ -56,6 +58,7 @@ const check = async (): Promise<CheckResult | CheckResultOK> => {
 
   if (result.pkg) {
     const pkg = JSON.parse(await Deno.readTextFile(result.pkg));
+    result.name = pkg.name || false;
     result.widgetName = pkg.widgetName || false;
     result.packagePath = pkg.packagePath || false;
     result.version = pkg.version || false;
