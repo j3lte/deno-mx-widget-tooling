@@ -9,7 +9,7 @@ import {
 
 import { check, copyRelease, icons, setup, sizes, version } from "./src/mod.ts";
 
-export const VERSION = "0.3.3";
+export const VERSION = "0.4.0";
 
 if (import.meta.main) {
   await new Command()

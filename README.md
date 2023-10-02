@@ -15,7 +15,7 @@ If you have [Deno](https://deno.land/) installed, you can run the following comm
 <!-- START INSTALL -->
 
 ```bash
-deno install -A -n mx-widget-tooling https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/0.3.3/cli.ts
+deno install -A -n mx-widget-tooling https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/0.4.0/cli.ts
 ```
 
 <!-- END INSTALL -->
@@ -33,7 +33,7 @@ You can download the latest executable from the [releases page](https://github.c
 ```
 
 Usage:   mx-widget-tooling                                                                                       
-Version: 0.3.3  
+Version: 0.4.0  
 
 Description:
 
@@ -46,13 +46,14 @@ Options:
 
 Commands:
 
-  check                   - Check the current folder if it is a proper setup                             
-  version  [version]      - Set the version of the widget                                                
-  setup                   - Setup the current folder as a widget, include some goodies left behind by R&D
-  sizes                   - Show the sizes of the widget mpks                                            
-  icons    [file] [dark]  - Generate the icons for the widget                                            
-  upgrade                 - Upgrade mx-widget-tooling executable to latest or given version.             
-  help     [command]      - Show this help or the help of a sub-command.                                 
+  check                             - Check the current folder if it is a proper setup                             
+  version       [version]           - Set the version of the widget                                                
+  setup                             - Setup the current folder as a widget, include some goodies left behind by R&D
+  sizes                             - Show the sizes of the widget mpks                                            
+  copy-release  [target] [version]  - Copy the latest release to a target folder                                   
+  icons         [file] [dark]       - Generate the icons for the widget                                            
+  upgrade                           - Upgrade mx-widget-tooling executable to latest or given version.             
+  help          [command]           - Show this help or the help of a sub-command.                                 
 
 ```
 <!-- END SNIPPET -->
