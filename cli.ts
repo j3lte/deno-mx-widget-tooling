@@ -11,6 +11,7 @@ import {
   check,
   copyRelease,
   icons,
+  installWorkflows,
   renamePackage,
   setup,
   sizes,
@@ -59,6 +60,14 @@ if (import.meta.main) {
           iconPadding: iconPadding ? parseInt(iconPadding) : undefined,
           tilePadding: tilePadding ? parseInt(tilePadding) : undefined,
         }, force);
+        Deno.exit(ok ? 0 : 1);
+      },
+    )
+    .command("install-workflows", "Install Github workflows")
+    .option("-f, --force", "Force the workflows to be installed")
+    .action(
+      async ({ force }) => {
+        const ok = await installWorkflows(force);
         Deno.exit(ok ? 0 : 1);
       },
     )
