@@ -11,11 +11,16 @@ export {
 } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/upgrade/mod.ts";
 
 export {
+  copy,
   ensureDir,
   exists,
   walk,
 } from "https://deno.land/std@0.201.0/fs/mod.ts";
-export { join } from "https://deno.land/std@0.201.0/path/mod.ts";
+export {
+  basename,
+  dirname,
+  join,
+} from "https://deno.land/std@0.201.0/path/mod.ts";
 export { cmp } from "https://deno.land/std@0.201.0/semver/mod.ts";
 
 export { tryParse } from "https://deno.land/std@0.201.0/semver/try_parse.ts";

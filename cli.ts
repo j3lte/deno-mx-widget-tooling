@@ -7,7 +7,7 @@ import {
   UpgradeCommand,
 } from "./deps.ts";
 
-import { check, icons, setup, sizes, version } from "./src/mod.ts";
+import { check, copyRelease, icons, setup, sizes, version } from "./src/mod.ts";
 
 export const VERSION = "0.3.3";
 
@@ -48,6 +48,16 @@ if (import.meta.main) {
       async (_opts) => {
         await sizes();
         Deno.exit(0);
+      },
+    )
+    .command(
+      "copy-release [target:string] [version:string]",
+      "Copy the latest release to a target folder",
+    )
+    .action(
+      async (_opts, target, version) => {
+        const ok = await copyRelease(target, version);
+        Deno.exit(ok ? 0 : 1);
       },
     )
     .command(

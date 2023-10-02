@@ -21,7 +21,7 @@ jobs:
       - name: Setup Deno
         uses: denoland/setup-deno@v1
         with:
-          deno-version: v1.36.4
+          deno-version: v1.37.1
 
       - name: Remove lockfile
         run: rm -f deno.lock
