@@ -30,7 +30,11 @@ const installWorkflows = async (force?: boolean): Promise<boolean> => {
 
   const {
     rootFolder,
+    widgetName,
+    packagePath,
   } = checked as CheckResultOK;
+
+  const fileName = `${packagePath}.${widgetName}.mpk`;
 
   // Check if workflows are already installed
   const workflowsFolder = join(rootFolder, ".github/workflows");
@@ -56,10 +60,15 @@ const installWorkflows = async (force?: boolean): Promise<boolean> => {
         const workflowContent = await fetch(workflow.url).then((res) =>
           res.text()
         );
-        const replacedContent = workflowContent.replaceAll(
-          "|REPLACE_VERSION|",
-          VERSION,
-        );
+        const replacedContent = workflowContent
+          .replaceAll(
+            "|REPLACE_VERSION|",
+            VERSION,
+          )
+          .replaceAll(
+            "|REPLACE_WIDGET_NAME|",
+            fileName,
+          );
 
         await Deno.writeTextFile(workflowFile, replacedContent);
       } catch (error) {
