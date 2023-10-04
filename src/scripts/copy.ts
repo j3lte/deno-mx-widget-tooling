@@ -50,7 +50,7 @@ const copyRelease = async (
   const targetBase = basename(toTarget);
   if (targetBase !== "widgets") {
     // Assume we're targetting a project folder that has a widgets folder
-    target = join(toTarget, "widgets");
+    toTarget = join(toTarget, "widgets");
   }
 
   const targetExists = await exists(toTarget, { isDirectory: true });
