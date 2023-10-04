@@ -20,7 +20,7 @@ const copyRelease = async (
 
   const { MX_PROJECT_PATH } = config();
 
-  if (typeof toTarget === "undefined") {
+  if (typeof toTarget === "undefined" || toTarget === "-") {
     if (typeof MX_PROJECT_PATH === "string") {
       toTarget = MX_PROJECT_PATH;
     } else {
