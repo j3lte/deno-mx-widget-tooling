@@ -60,12 +60,12 @@ const readMpkFile = async (fileUri: string): Promise<
   return entries;
 };
 
-const sizes = async () => {
+const sizes = async (silent = false) => {
   const { rootFolder, valid } = await check();
 
   if (!valid) {
     console.log("Not a valid widget folder");
-    return;
+    return false;
   }
 
   const mpkFolder = join(rootFolder, "dist");
@@ -76,7 +76,7 @@ const sizes = async () => {
 
   if (!mpkFolderExists) {
     console.log("No dist folder found");
-    return;
+    return false;
   }
 
   const mpks = [];
@@ -91,7 +91,7 @@ const sizes = async () => {
 
   if (mpks.length === 0) {
     console.log("No mpks found");
-    return;
+    return false;
   }
 
   const sizes = Promise.all(
@@ -107,6 +107,10 @@ const sizes = async () => {
     }),
   );
 
+  if (silent) {
+    return sizes;
+  }
+
   console.log("Version\t\tSize\t\t(js)\t\t(gzip)");
   (await sizes).forEach((size) => {
     console.log(`${size.version}\t\t${size.size}`);
@@ -114,6 +118,8 @@ const sizes = async () => {
       console.log(`\t${file.path}\t\t${file.size}\t\t${file.gzip}`);
     });
   });
+
+  return sizes;
 };
 
 export default sizes;
