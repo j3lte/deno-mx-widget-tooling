@@ -6,6 +6,7 @@
     "check:license": "deno run -A ./scripts/check-license.ts --check",
     "check:types": "deno check cli.ts",
     "check": "deno task check:license && deno task check:types",
+    "fmt": "deno fmt --ignore=README.md",
     "ok": "deno fmt --check --ignore=README.md && deno lint && deno task check",
     "cache": "deno cache --lock=deno.lock --lock-write ./deps.ts"
   },
