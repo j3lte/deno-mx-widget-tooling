@@ -29,6 +29,8 @@ export { default as convert } from "https://deno.land/x/convert_pro@1.3.0/mod.ts
 
 export { gzipSize } from "https://deno.land/x/gzip_size@v0.3.0/mod.ts";
 
+export { config } from "https://deno.land/x/dotenv@v3.2.2/mod.ts";
+
 export {
   Uint8ArrayReader,
   Uint8ArrayWriter,

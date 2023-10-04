@@ -1,5 +1,8 @@
 {
   "version": "3",
+  "redirects": {
+    "https://deno.land/x/dotenv/mod.ts": "https://deno.land/x/dotenv@v3.2.2/mod.ts"
+  },
   "remote": {
     "https://deno.land/std@0.108.0/_util/assert.ts": "2f868145a042a11d5ad0a3c748dcf580add8a0dbc0e876eaa0026303a5488f58",
     "https://deno.land/std@0.108.0/_util/os.ts": "dfb186cc4e968c770ab6cc3288bd65f4871be03b93beecae57d657232ecffcac",
@@ -218,6 +221,8 @@
     "https://deno.land/x/convert_pro@1.3.0/convert.ts": "4afee0efbc2b6ab68852acd713bed82ba8e0be8df875db8c03bf04715daba138",
     "https://deno.land/x/convert_pro@1.3.0/mod.ts": "d268ebf9d26af57a33f0123ac94352252e426d159e24d422cf63e6ab5fd678c4",
     "https://deno.land/x/crc32@v0.2.0/mod.ts": "de7a3fa2d4ef24b96fc21e1cc4d2d65d1d2b1dcea92f63960e3e11bfa82df0fa",
+    "https://deno.land/x/dotenv@v3.2.2/mod.ts": "077b48773de9205266a0b44c3c3a3c3083449ed64bb0b6cc461b95720678d38e",
+    "https://deno.land/x/dotenv@v3.2.2/util.ts": "693730877b13f8ead2b79b2aa31e2a0652862f7dc0c5f6d2f313f4d39c7b7670",
     "https://deno.land/x/gzip_size@v0.3.0/mod.ts": "65fd7390ff01b164f93ac79d0a75c9b5903ff1110d5805aa8296b0c3016640cb",
     "https://deno.land/x/imagescript@1.2.15/ImageScript.js": "9ce10c37a0e4fe43699689088c24f386fd401874057932bd57079ac729205038",
     "https://deno.land/x/imagescript@1.2.15/mod.ts": "18a6cb83c55e690c873505f6fe867364c678afb64934fe7aef593a6b92f79995",
