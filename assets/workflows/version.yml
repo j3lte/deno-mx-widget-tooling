@@ -71,7 +71,7 @@ jobs:
               with:
                   body_path: ".github/RELEASE-TEMPLATE.md"
                   files: |
-                      dist/${{ github.event.inputs.version }}/caffcode.RefSelector.mpk
+                      dist/${{ github.event.inputs.version }}/|REPLACE_WIDGET_NAME|
                   tag_name: ${{ github.event.inputs.version }}
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
