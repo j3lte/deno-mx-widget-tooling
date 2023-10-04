@@ -15,7 +15,7 @@ If you have [Deno](https://deno.land/) installed, you can run the following comm
 <!-- START INSTALL -->
 
 ```bash
-deno install -A -n mx-widget-tooling https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/0.5.2/cli.ts
+deno install -A -n mx-widget-tooling https://raw.githubusercontent.com/j3lte/deno-mx-widget-tooling/0.5.3/cli.ts
 ```
 
 <!-- END INSTALL -->
@@ -33,7 +33,7 @@ You can download the latest executable from the [releases page](https://github.c
 ```
 
 Usage:   mx-widget-tooling                                                                                       
-Version: 0.5.2  
+Version: 0.5.3  
 
 Description:
 
