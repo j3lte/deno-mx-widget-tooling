@@ -1,6 +1,6 @@
 // Copyright 2023 J.W. Lagendijk. All rights reserved. MIT license.
 
-import { cmp, tryParse } from "../../deps.ts";
+import { compare, tryParse } from "../../deps.ts";
 import check from "./check.ts";
 import type { CheckResultOK } from "./check.ts";
 
@@ -43,7 +43,7 @@ const version = async (
     return false;
   }
 
-  if (cmp(parsed, "<=", resVersion) && !force) {
+  if (compare(parsed, resVersion) === -1 && !force) {
     console.log(
       `New version ${newVersion} is not higher than ${version}`,
     );

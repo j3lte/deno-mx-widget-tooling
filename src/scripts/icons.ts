@@ -17,7 +17,7 @@ interface IconsOptions {
 const readImage = async (fileUri: string): Promise<Image> => {
   if (fileUri.endsWith(".svg")) {
     const svg = await Deno.readTextFile(fileUri);
-    const img = Image.renderSVG(svg, 1, Image.SVG_MODE_SCALE);
+    const img = Image.renderSVG(svg, 256, Image.SVG_MODE_SCALE);
     return img.clone().fit(tileSize[1] - 10, tileSize[1] - 10);
   }
   const fileImage = await Deno.readFile(fileUri);
