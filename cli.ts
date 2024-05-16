@@ -18,7 +18,7 @@ import {
   version,
 } from "./src/mod.ts";
 
-export const VERSION = "0.5.4";
+export const VERSION = "0.5.5";
 
 if (import.meta.main) {
   await new Command()
